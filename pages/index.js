@@ -1,13 +1,14 @@
 import Layout from "@/components/Layout";
+import ProductItem from "@/components/ProductItem";
+import data from "@/utils/data";
 
 export default function Home() {
   return (
     <Layout title="Home">
-      <div>
-        main Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
-        saepe tempore cum ipsum? Repellat, suscipit esse. Consectetur officia
-        qui voluptatibus non consequatur enim neque ipsam, soluta consequuntur,
-        reiciendis molestiae aliquid.
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+        {data.products.map((product) => (
+          <ProductItem product={product} key={product.id} />
+        ))}
       </div>
     </Layout>
   );
